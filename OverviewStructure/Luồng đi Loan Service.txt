@@ -1,0 +1,8 @@
+Luồng đi:
+CLIENT -----> [*Loan Service] -----> Authorization Middleware -----> Controller Input validate -------> Business Logic ----call to core service---> Core service -----CRUD operations-------> Database
+
+CLIENT -----> [*Loan Service] -----> Authorization Middleware -----> Controller Input validate -------> Business Logic  (Các module)----call to core service---> Core service -----CRUD operations-------> Database
+
+LOAN CORE SERVICE:Layer
+
+Message handle ---> Controller ----> 

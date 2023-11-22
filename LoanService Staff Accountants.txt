@@ -1,0 +1,114 @@
+LoanService:
+/Staff
+//Accountants
++ Personal Information Management: Thêm, xóa, sửa, xem thông tin kế toán
++ Loan Term Tracking: theo dõi kì hạn nợ để thu hồi đúng hạn, kể cả nợ quá hạn để đưa vào nợ xấu
++ Customer Document View: XEM hồ sơ cho vay
++ Customer Financial Monitoring Giám sát tình hình tài chính khách hàng thông qua hoạt động của tài khoản tiền gửi và tài khoản cho vay, phát hiện tài chính khhông lành mạnh
++ Report Management: Xem, xuất, tạo Báo cáo
+
+//Document Reviewer
++ View Customer Document: Xem hồ sơ khách hàng
++ Document Rating: Đánh giá hồ sơ (sau khi đánh giá xong sẽ gọi tới gọi tới Loan Management để tạo hợp đồng, đồng thời thông báo duyệt thành công cho khách hàng qua service notify), bao gồm:
+
+-------TABLE---------------------------------------------------------------------
+
+   -- Credit Scoring and Rating: Chấm điểm xếp hạng tín dụng của khách hàng và hồ sơ
+   -- Credit Risk Assessment:  Đánh giá mức độ rủi ro khi cấp tín dụng cho khách hàng
+   -- Loan approval: Đưa ra quan điểm đồng ý hay không đồng ý cho vay tín dụng
+----------------------------------------------------------------------------------
+
+//Consultants
++ Consultants management: Quản lý thông tin nhân viên tư vấn
++ Customer Information View: Xem thông tin khách hàng
++ Potential Customer Management: Quản lý danh sách khách hàng tiềm năng
++ Loan Package View: Xem các gói vay
++ LenderListView: Xem danh sách đối tác vay
++ ConsultationHistoryView:  Lịch sử tư vấn (gói vay nào, cho khách hàng nào, của đối tác nào)
++ BadDebtHistoryView: Xem lịch sử nợ xấu
+/Management
+//Contracts
++ Contract management: Quản lý hợp đồng vay: 
+	-- Tạo hợp đồng vay
+	-- Xem hợp đồng vay
+	-- Xuất hợp đồng vay
+	-- Hủy hợp đồng vay
+//Documents
++ Document Management: Quản lý hồ sơ:
+	-- Thêm/xóa/sửa/xem hồ sơ
+//Debt
++ Debt management: Quản lý nợ: Thêm/xóa/sửa nợ
+
+/Customers
+//Borrowers
++ New Customer Registration
++ Personal Information Management: Quản lý thông tin cá nhân (thông tin, ảnh đại diện,...)
++ Loan Package Check: Kiểm tra gói vay (xem có thể vay được bao nhiêu -> nhập vào thu nhập hàng tháng, thông tin cá nhân): gửi thông tin đến cho bên thẩm định chờ duyệt
++ Document Upload: Đăng tải hồ sơ
++ Loan Request: Yêu cầu vay
+
+//Lenders
++ Đăng ký đối tác
++ Quản lý thông tin cá nhân (thông tin, ảnh đại diện,...)
++ Quản lý yêu cầu vay
+
+
+Function:
+
+* Kế toán:
+
+
+
+-------------------------------------
+* Nhân viên thẩm định tín dụng:
+
+
+-------------------------------------
+* Nhân viên tư vấn
+
++  MaxLoanAmountCheck: Kiểm tra số tiền tối đa có thể vay của khách hàng (dưa vào thu nhập, tuổi,...)
+
++ 
+
+----------------------------------
+
+* Khách hàng (đi vay):
+
+
+
+--------------------------------------
+
+*Khách hàng (cho vay)
+
+--------------------------------------
+
+*Contract 
+
+
+
+* Hồ sơ
+
+* Nợ
+
+
+Chia lại Module:
+/Employees
+
+/Borrowers
+
+/Lenders
+
+/Documents
+
+/Contracts
+
+/Kế ước - tài sản vay
+
+/Loan packages
+
+
+Thiết kế các layer
+
+Authentication Middleware -----> Controlller ------> Service Layer ---> Repositpory ---- > DB 
+
+
